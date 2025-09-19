@@ -285,9 +285,6 @@
 
     console.log('I escaped the loop');
 
-
-
-
 */
 
 /*
@@ -428,16 +425,37 @@
     // const greekGods = ['Zeus', 'Hypnos', 'Poseidon', 'Hades', 'Athena', 'Ares', 'Hera', 'Hermes', 'Hypnos', 'Aphrodite'];
 
     // let found = false;
+    // let elementsFound = 0;
 
     // for (let i = 0; i < greekGods.length; i++) {
-    // if (greekGods[i] == 'Hypnos') {
-    //     console.log('Hypnos is at index', i);
-    //     found = true;
+    //     if (greekGods[i] == 'Hypnos') {
+    //         found = true;
+    //         elementsFound++;
+    //     }
     // }
+
+    // if (elementsFound > 1) {
+    //     let firstIndex = greekGods.findIndex(element => element == 'Hypnos');
+    //     console.log('Hypnos is at index',firstIndex);
+
+    //     let lastIndex = greekGods.findLastIndex( element => element == 'Hypnos');
+    //     console.log('Hypnos is at index',lastIndex);
+        
+    // }
+
+    // // Alternative
+
+    // if (elementsFound > 1) {
+    //     let firstIndex = greekGods.indexOf('Hypnos');
+    //     console.log('Hypnos is at index',firstIndex);
+
+    //     let lastIndex = greekGods.lastIndexOf('Hypnos');
+    //     console.log('Hypnos is at index',lastIndex);
+        
     // }
 
     // if (found == false) {
-    // console.log('My favorite Greek Goddess is Athena');
+    //     console.log('My favorite Greek Goddess is Athena');
     // }
 
 /*
@@ -451,6 +469,12 @@
     //         console.log(i);
     //     }
     // }
+
+    // let num1 = numbers.find(element => element % 3 == 0 && element % 5 == 0);
+    // let num1Index = numbers.findIndex(element => element % 3 == 0 && element % 5 == 0);
+
+    // console.log(num1);
+    // console.log(num1Index);
 
 /*
 4. Using the same array, find the last element that is divisible by 2.
@@ -471,6 +495,9 @@
 
     // console.log("Last even number is", lastEven);
 
+    // let lastEven = numbers.findLast(element => element % 2 == 0);
+    // console.log(lastEven);
+
 /*
 5. Using the 'dogs' array, use an array method to find:
     - the element written in uppercase
@@ -481,18 +508,19 @@
 */
 // NOTE: Remember pag array iteration method ang gagamitin, mag-iiterate siya sa bawat elements. Oki?
 
-    // const dogs = ['DaLMaTiaN', 'pomeranian', 'BULLDOG', ]
+    // const dogs = ['DaLmAtIaN', 'pomeranian', 'BULLDOG', ]
 
-    // for (i = 0; i <= dogs.length - 1; i++) {
-    //     if (dogs[i] == /|A-Z|/.test(i)){
-    //         console.log("index", i, "is written in Uppercase");
-    //     } else if (dogs[i] == /|a-z|/.test(i)) {
-    //         console.log("index", i, "is written in Lowercase")
-    //     } else {
-    //         console.log("index", i, "is written in combination of uppercase and lowercase");
-            
-    //     }
-    // }
+    // lowercase regex - /^[a-z]+$/
+    // combination of uppercase and lowercase - /^[a-zA-Z]+$/
+
+    // let isInUppercase = dogs.find(element => /^[A-Z]+$/.test(element));
+    // let isInLowercase = dogs.find(element => /^[a-z]+$/.test(element));
+    // let isInBoth = dogs.find(element => /^[a-zA-Z]+$/.test(element)); 
+
+    // console.log(isInUppercase);
+    // console.log(isInLowercase);
+    // console.log(isInBoth);
+    
 
 /*
 6. Using the 'names' array. Print every elements in uppercase.
@@ -502,7 +530,9 @@
     // const newArr = [];
 
     // names.forEach(function(name) {
+
     //     newArr.push(name.toUpperCase());
+
     // });
 
     // console.log(newArr);
@@ -518,9 +548,9 @@ Clue: Gagamit ng array method then sa loob, for-loop or baka may maisip ka pa na
 
     // names.forEach(function(name) {
 
-    // let reversed = name.split('').reverse().join('');
+    //     let reversed = name.split('').reverse().join('');
 
-    // newArr.push(final);
+    //     newArr.push(reversed);
     // });
 
     // console.log(newArr);
@@ -543,30 +573,20 @@ Clue: Gagamit ng array method then sa loob, for-loop or baka may maisip ka pa na
 */
 
     // const names = ['Ethan', 'Marcus', 'Kirk', 'Julian', 'Noah', 'Samuel'];
-    // const newArr = [];
 
-    // names.forEach(function(name) {
+    // names.forEach((element, index) => {
+    //     names[index] = element.toLowerCase();
+    // })
 
-    // let reversed = name.split('').reverse().join('');
-
-    // newArr.push(final.toLowerCase());
-    // });
-
-    // console.log(newArr);
+    // console.log(names);
 
 /*
 10. Using the 'names' array, create a new array with the same elements spelt in reverse.
 */
 
     // const names = ['Ethan', 'Marcus', 'Kirk', 'Julian', 'Noah', 'Samuel'];
-    // const newArr = [];
 
-    // names.forEach(function(name) {
-
-    // let reversed = name.split('').reverse().join('');
-
-    // newArr.push(final);
-    // });
+    // const newArr = names.map(element => element.split('').reverse().join(''));
 
     // console.log(newArr);
 
@@ -575,15 +595,8 @@ Clue: Gagamit ng array method then sa loob, for-loop or baka may maisip ka pa na
 */
 
     // const names = ['Ethan', 'Marcus', 'Kirk', 'Julian', 'Noah', 'Samuel'];
-    // const newArr = [];
 
-    // names.forEach(function(name) {
-
-    // let namesLength = name.length;
-
-    // newArr.push(namesLength);
-    // });
-
+    // const newArr = names.map(element => element.length);
     // console.log(newArr);
 
 /*
@@ -592,14 +605,9 @@ Clue: Gagamit ng array method then sa loob, for-loop or baka may maisip ka pa na
 
     // const names = ['Ethan', 'Marcus', 'Kirk', 'Julian', 'Noah', 'Samuel'];
 
-    // let shortNames = names.filter(function(name) {
-
-    //     return name.length < 5;
-
-    // });
+    // let shortNames = names.filter(element => element.length < 5);
 
     // console.log(shortNames);
-
 
 /*
 13. Using an array method, find the largest and smallest value in array 'numbers1'.
@@ -607,11 +615,10 @@ Clue: Gagamit ng array method then sa loob, for-loop or baka may maisip ka pa na
 
     // const numbers1 = [10, 32, 8, 29, 56, 92, 45];
 
-    // const smallest = Math.min.apply(null, numbers1);
-    // const largest = Math.max.apply(null, numbers1);
+    // let smallestNum = Math.min(...numbers1);
+    // let largestNum = Math.max(...numbers1);
 
-    // console.log("Smallest:", smallest);
-    // console.log("Largest:", largest);
+    // console.log(`The smallest num is ${smallestNum} and the largest num is ${largestNum}`);
 
 /*
 14. Using an array method, print an array that consists of the elements in the second index to the last index.
@@ -619,9 +626,9 @@ Clue: Gagamit ng array method then sa loob, for-loop or baka may maisip ka pa na
 
     // const names = ['Ethan', 'Marcus', 'Kirk', 'Julian', 'Noah', 'Samuel'];
 
-    // let slicedArr = names.slice(2);
+    // [a, b, ...rest] = names;
 
-    // console.log(slicedArr);
+    // console.log(rest);
 
 
 /*
@@ -630,9 +637,7 @@ Clue: Gagamit ng array method then sa loob, for-loop or baka may maisip ka pa na
 
     // const new_numbers = [3, 8, 12, 5, 18, 7, 25, 14, 30, 9, 22, 1];
 
-    // let between = new_numbers.filter(function(num) {
-    //     return num >= 1 && num <= 9;
-    // });
+    // let between = new_numbers.filter(element => element > 1 && element < 9);
 
     // console.log(between);
 
@@ -645,15 +650,14 @@ Clue: Combination of array method and string method :)
 
     // const vowels = ['a', 'e', 'i', 'o', 'u'];
 
-    // let startsWithVowel = words.filter( function(word) {
+    // let startsWithVowel = words.filter((word) => {
 
-    // let firstLetter = word.charAt(0).toLowerCase();
+    //     let firstLetter = word.charAt(0).toLowerCase();
 
-    // return vowels.includes(firstLetter);
+    //     return vowels.includes(firstLetter);
     // });
 
     // console.log(startsWithVowel);
-
 
 /*
 17. Using the 'words' array, use an array method to get all words that begin with 'e'.
@@ -662,8 +666,8 @@ Clue: Combination of array method and string method :)
 
     // const words = ['apple', 'banana', 'cat', 'dog', 'elephant', 'fish', 'guitar', 'house', 'ice', 'jungle'];
 
-    // const startsWithE = words.filter(function(word) {
-    // return /^e/i.test(word);
+    // const startsWithE = words.filter((word) => {
+    //     return /^e/.test(word);
     // });
 
     // console.log(startsWithE);
@@ -674,8 +678,8 @@ Clue: Combination of array method and string method :)
 
     // const words = ['apple', 'banana', 'cat', 'dog', 'elephant', 'fish', 'guitar', 'house', 'ice', 'jungle'];
 
-    // const allFourChars = words.every(function(word) {
-    // return word.length == 4;
+    // const allFourChars = words.every((word) => {
+    //     return word.length == 4;
     // });
 
     // console.log(allFourChars);
@@ -684,25 +688,23 @@ Clue: Combination of array method and string method :)
 19. Using an array method, check if elements of 'cosmic1' are all in uppercase.
 */
     
-    // const cosmic1 = ['SUN', 'MOON', 'STAR', 'star'];
-    // const cosmic2 = ['planet', 'galaxy', 'universe'];
-    // const cosmic3 = ['lght', 'drk', 'strdst'];
+    // const cosmic1 = ['SUN', 'MOON', 'STAR'];
 
     // function allUppercase(arr) {
-    // return arr.every(function(word) {
-    //     test = /[a-z]/.test(word)
-        
-    //     if (test == true) {
-    //         return false;
-    //     } else {
-    //         return true;
-    //     };
-    // });
+    //     return arr.every(function(word) {
+    //         test = /[a-z]/.test(word)
+            
+    //         if (test == true) {
+    //             return false;
+    //         } else {
+    //             return true;
+    //         };
+    //     });
     // }
 
-    // console.log("cosmic1:", allUppercase(cosmic1));
-    // console.log("cosmic2:", allUppercase(cosmic2));
-    // console.log("cosmic3:", allUppercase(cosmic3));
+    // let isInUpperCase = cosmic1.every((element) => /^[A-Z]+$/.test(element));
+
+    // console.log("cosmic1:", isInUpperCase);
 
 
 /*
@@ -712,15 +714,15 @@ Clue: Combination of array method and string method :)
     // const cosmic2 = ['planet', 'galaxy', 'universe'];
 
     // function allLowercase(arr) {
-    // return arr.every(function(word) {
-    //     test = /[a-z]/.test(word)
-        
-    //     if (test == false) {
-    //         return false;
-    //     } else {
-    //         return true;
-    //     };
-    // });
+    //     return arr.every(function(word) {
+    //         test = /^[a-z]+$/.test(word)
+            
+    //         if (test == false) {
+    //             return false;
+    //         } else {
+    //             return true;
+    //         };
+    //     });
     // }
 
     // console.log(allLowercase(cosmic2));
@@ -731,7 +733,7 @@ Clue: Combination of array method and string method :)
     // const cosmic3 = ['lght', 'drk', 'strdst'];
 
     // function hasVowel(arr) {
-    // return arr.every(function(word) {
+    // return arr.some(function(word) {
     //     test = /[a,e,i,o,u]/.test(word)
         
     //     if (test == false) {
@@ -751,7 +753,7 @@ Clue: Gagamit ng reduce() method
 
     // const words1 = ['hello', 'world', 'javascript', 'is', 'awesome'];
 
-    // let allElements = words1.reduce( function (acc, curr) {
+    // let allElements = words1.reduce((acc, curr) => {
     //     return acc + (" ") + curr
     // })
 
@@ -789,7 +791,9 @@ Clue: Gagamit ng reduce() method
 
     // let string = 'STRING';
 
-    // console.log(string.split(''));
+    // let toArray = Array.from(string);
+
+    // console.log(toArray);
 
 /*
 26. Using the fruits array, use an array method to replace the first and last element with 'pear' and 'kiwi', respectively.
@@ -797,8 +801,139 @@ Clue: Gagamit ng reduce() method
 
     // const fruits = ['apple', 'banana', 'pineapple'];
 
-    // const fruit1 = fruits.with(0, "pear");
+    // const fruit1 = fruits.with(0, "pear").with(2, "kiwi");
     // const fruit3 = fruits.with(2, "kiwi");
 
     // console.log(fruit1);
-    // console.log(fruit3);
+
+
+/*
+27. Given an array of numbers, check if all numbers are positive.
+*/
+
+    // const scores = [85, 92, 78, 96, 88];
+
+    // let areAllPositive = scores.every((element) => Math.sign(element) == 1);
+    // console.log(areAllPositive);
+
+/*
+28. Given an array of strings, check if any string has more than 5 characters.
+*/
+
+    // const words = ['cat', 'dog', 'elephant', 'fox', 'dolphin', ' giraffe'];
+
+    // let hasFiveChars = words.some(elements => elements.length > 5);
+    // console.log(hasFiveChars);
+
+    // if (hasFiveChars) {
+    //     const wordsWithFiveChars = words.filter((word) => word.length > 5);
+    //     console.log(wordsWithFiveChars);
+    // } else {
+    //     console.log('No words has more than 5 characters');
+    // }
+
+
+/*
+29. Given an array of numbers, double each number and then keep only those greater than 10.
+*/
+
+    // const numbers = [2, 5, 8, 1, 9];
+
+    // let newNum = numbers.map( elements => (elements * 2)).filter(elements => elements > 10);
+    // console.log(newNum);    
+
+/*
+30. Given an array of strings, return an array showing how many vowels each string contains.
+*/
+
+    // const words1 = ['hello', 'world', 'javascript'];
+    // const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+    // const words1Length = [];
+
+    // words1.forEach((word) => {
+    //     let filteredWord = word.split('').filter((letter) => vowels.includes(letter)).join('');
+
+    //     words1Length.push(filteredWord.length);
+    // });
+
+    // // Long method
+
+    // words1.forEach((word) => {
+    //     let splitWord = word.split('');
+
+    //     let filteredWord = splitWord.filter((letter) => vowels.includes(letter));
+
+    //     let joinedWords = filteredWord.join('');
+
+    //     words1Length.push(joinedWords.length);
+    // });
+    // console.log(words1Length);
+
+/*
+31. Given an array with duplicate values, return a new array with only unique values.
+*/
+
+    // const numbers1 = [1, 2, 2, 3, 4, 4, 5, 1];
+
+    // const unique = [];
+
+    // numbers1.forEach(elements => {
+    //     if (!unique.includes(elements)) {
+    //         unique.push(elements);
+    //     }
+    // });
+
+    // console.log(unique);
+    
+/*
+32. Given an array containing nested arrays, flatten it into a single array.
+*/
+
+    // const nested = [[1, 2], [3, 4, 5], [6], [7, 8, 9]];
+
+    // let modified = nested.flat();
+
+    // console.log(modified);
+    
+
+/*
+33. Given an array of numbers, keep only numbers divisible by 3, then square them.
+*/
+
+    // const numbers2 = [1, 3, 4, 6, 7, 9, 12, 15];
+
+    // let newNum = numbers2.filter(number => number % 3 == 0).map(number => number**2);
+
+    // console.log(newNum);
+
+/*
+34. Given an array of numbers, multiply each by 2, keep only those > 10, then sum them up.
+*/
+
+const numbers = [2, 8, 1, 6, 4, 9];
+
+    let newNumbers = numbers.map(num => num * 2).filter(num => num > 10).reduce((acc, curr) => acc + curr, 0);
+
+    console.log(newNumbers);
+    
+/*
+35. Given an array of sentences, return an object with the total word count and average words per sentence.
+*/
+
+const sentences = [
+    "Hello world",
+    "JavaScript is awesome",
+    "I love coding very much",
+    "Arrays are useful"
+];
+
+    sentences.forEach((sentence) => {
+        let sentenceArr = sentence.split(' '); // ['Hello', 'World].length()
+    });
+
+/*
+36 Given an array of full names, create an array of initials.
+*/
+
+const names = ['John Smith', 'Mary Jane Watson', 'Peter Parker'];
