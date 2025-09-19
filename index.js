@@ -775,14 +775,13 @@ Clue: Gagamit ng reduce() method
 24. Using an array method, concatenate all the elements of 'words1' starting from the last index.
 */
 
-    const words1 = ['hello', 'world', 'javascript', 'is', 'awesome'];
+    // const words1 = ['hello', 'world', 'javascript', 'is', 'awesome'];
 
-    let totalChars = words1.reduceRight(function (acc, curr) {
-        return acc + (' ') + curr;
-    });
+    // let totalChars = words1.reduceRight(function (acc, curr) {
+    //     return acc + (' ') + curr;
+    // });
 
-    console.log(totalChars);
-
+    // console.log(totalChars);
 
 /*
 25. Create an array using the characters of this string => 'STRING'.
@@ -803,12 +802,3 @@ Clue: Gagamit ng reduce() method
 
     // console.log(fruit1);
     // console.log(fruit3);
-    
-    
-
-
-
-
-
-
-
